@@ -1,0 +1,16 @@
+<textarea rows="10" cols="100" [(ngModel)]="text"></textarea>
+<br>
+<input type="checkbox" value="newsletter" id="abstract" [(ngModel)]="langenabled" />
+<label for="abstract">enable lang</label>
+<br>
+<select name="tmp" [disabled]="!langenabled" [(ngModel)]="lang">
+  <option value="en">english</option>
+  <option value="it">italian</option>
+  <option value="auto">automatic</option>
+</select>
+<div>
+  <button type="submit" (click)="sendRequest()">Send request</button>
+</div>
+{{score}}
+<br>
+<p [ngStyle]="{'background': getColor()}">{{value}}</p>

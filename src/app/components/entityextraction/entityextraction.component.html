@@ -1,0 +1,44 @@
+<p>entityextraction works!</p>
+<br>
+<textarea rows="10" cols="100" [(ngModel)]="text"></textarea>
+<br>
+<div class="slidecontainer">
+  <input type="range" min="0" max="1" value="0.5" step="0.01" class="slider" [(ngModel)]="sliderVal">
+  {{sliderVal}}
+</div>
+<br>
+<div>
+  <input type="checkbox" value="newsletter" id="image" [(ngModel)]="imageChecked" />
+  <label for="image">image</label>
+  <br>
+  <input type="checkbox" value="newsletter" id="abstract" [(ngModel)]="abstractChecked" />
+  <label for="abstract">abstract</label>
+  <br>
+  <input type="checkbox" value="newsletter" id="categories" [(ngModel)]="categoriesChecked" />
+  <label for="categories">categories</label>
+</div>
+<div>
+  <button type="submit" (click)="sendRequest()">Send request</button>
+</div>
+{{response}}
+<br>
+<div>
+  <div *ngFor="let annotation of responselist;">
+    <ng-container *ngIf="annotation.image || annotation.categories || annotation.abstract">
+      {{annotation.label}}
+      <br>
+    </ng-container>
+    <ng-container *ngIf="annotation.abstract">
+      {{annotation.abstract}}
+      <br>
+    </ng-container>
+    <ng-container *ngIf="annotation.categories">
+      {{annotation.categories}}
+      <br>
+    </ng-container>
+    <ng-container *ngIf="annotation.image">
+      <img [src]="annotation.image.thumbnail">
+      <br>
+    </ng-container>
+  </div>
+</div>

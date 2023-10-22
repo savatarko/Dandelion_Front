@@ -1,0 +1,8 @@
+<textarea rows="10" cols="100" [(ngModel)]="text"></textarea>
+<br>
+<input type="checkbox" value="newsletter" id="clean" [(ngModel)]="cleanChecked" />
+<label for="clean">clean</label>
+<div>
+  <button type="submit" (click)="sendRequest()">Send request</button>
+</div>
+{{response}}
