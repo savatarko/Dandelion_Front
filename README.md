@@ -1,4 +1,4 @@
-# Domaci1
+Front-end app for dandelion api
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
 
